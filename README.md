@@ -1,2 +1,3 @@
-# why_yellow_taxi
-## NYC
+# **Why Yellow Taxi, Not Subway**
+
+Sometimes people could take subway from A to B (directly, no transfer), but they take a yellow cab instead. We are wondering which subway line is the one that people are most unwilling to take, by detecting people’s choice pattern based on location, time and day of the week, we would like to answer the question why people would choose yellow cab instead of subway.
