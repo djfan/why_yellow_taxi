@@ -50,17 +50,13 @@ def countLine(partID, records):
     for idx, geometry in enumerate(entr_buf.geometry):
         index.insert(idx, geometry.bounds)
     
-
-    entr_pair = {}
-    pick_entr = {}
-    drop_entr = {}
     entr_lines = {}
-    
     proj = pyproj.Proj(init='epsg:2263', preserve_units=True)
     
     if partID==0:
         records.next()
     reader = csv.reader(records)
+    
     for row in reader:
         if ((float(row[5])!=0) and float(row[9]!=0)):
             p = geom.Point(proj(float(row[5]), float(row[6])))
@@ -75,24 +71,17 @@ def countLine(partID, records):
                     p_match = p_idx # print 'p',p_idx
                     p_lines = set(entr_buf.entr2line[p_idx])
                     break
-            pick_entr[p_match] = pick_entr.get(p_match, 0)+1
             
             for d_idx in d_potential:
                 if entr_buf.geometry[d_idx].contains(d):
                     d_match = d_idx # print 'd',d_idx
                     d_lines = set(entr_buf.entr2line[d_idx])
                     break
-            drop_entr[d_match] = drop_entr.get(d_match, 0)+1
             
             if ((p_match and d_match) and (p_match != d_match)):
                 dirct_lines = tuple(p_lines.intersection(d_lines))
                 if dirct_lines:
                     entr_lines[dirct_lines] = entr_lines.get(dirct_lines, 0)+1
-                if p_match > d_match:
-                    pair = (d_match, p_match)
-                else:
-                    pair = (p_match, d_match)
-                entr_pair[pair] = entr_pair.get(pair, 0)+1
     return entr_lines.items()
 
 def mapper(record):
