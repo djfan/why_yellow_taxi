@@ -29,6 +29,10 @@ Sometimes people could take subway from A to B (directly, no transfer), but they
 │   ├── Sjoin_Pyspark_1.ipynb
 │   ├── Sjoin_Pyspark_1.py
 │   ├── Sjoin_Pyspark_2.ipynb
+│   ├── Sjoin_Pyspark_2.py
+│   ├── Sjoin_Pyspark_3_byWeekday.ipynb
+│   ├── Sjoin_Pyspark_4_byHour.ipynb
+│   ├── Sjoin_Pyspark_4_byWDandHour.ipynb
 │   └── sjoin.py
 ├── Use\ IPython\ notebook\ interactively\ on\ a\ HPC\ system
 └── docs
