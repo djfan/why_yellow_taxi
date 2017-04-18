@@ -1,12 +1,32 @@
+## Doc
+
+| Name                               | Notes / Data                |       |
+| ---------------------------------- | --------------------------- | ----- |
+| sjoin.py                           | Geopandas sjoin function    |       |
+| Sjoin_Pyspark_1.ipynb / .py        | df_shuffle.csv              |       |
+| Sjoin_Pyspark_2.ipynb / .py        | yellow_tripdata_2016-01.csv | 1.6 G |
+| Sjoin_Pyspark_3\_byWeekday.ipynb   | df_shuffle.csv              |       |
+| Sjoin_Pyspark\_4_byHour.ipynb      | df_shuffle.csv              |       |
+| Sjoin_Pyspark\_4_byWDandHour.ipynb | df_shuffle.csv              |       |
 
 
 
+## To-Do
 
-| Name                        | Notes                       |       |
-| --------------------------- | --------------------------- | ----- |
-| sjoin.py                    | Geopandas sjoin function    |       |
-| Sjoin_Pyspark_1.ipynb / .py | df_shuffle.csv              |       |
-| Sjoin_Pyspark_2.ipynb       | yellow_tripdata_2016-01.csv | 1.6 G |
+- [ ] convert **.ipynb** into **.py**, then test them locally.
+- [ ] take more factors like **weekend service changes** into consideration, if time permits. 
+
+
+
+## Note
+
+- If any …
+
+
+
+## Result
+
+*Run Sjoin_Pyspark_2.py locally in brand new MacBook Pro with TouchBar* ^ ^.
 
 ```python
 sorted(counts, key=lambda x: x[1], reverse=True)
