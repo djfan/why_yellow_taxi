@@ -43,6 +43,18 @@ def countLine(partID, records):
 
     for row in reader:
         if ((float(row[5])!=0) and float(row[9]!=0)):
+        	if row[1]:
+        		wd_h = datetime.datetime.strptime(row[1], '%Y-%m-%d %H:%M:%S')
+        		wd = wd_h.weekday()
+        		hour = wd_h.hour
+        		day = wd_h.day
+        		month = wd_h.month
+        	else:
+        		wd = None
+        		hour = None
+        		day = None
+        		month = None
+
             p = geom.Point(proj(float(row[5]), float(row[6])))
             d = geom.Point(proj(float(row[9]), float(row[10])))
             p_potential = index.intersection((p.x,p.y,p.x,p.y))
@@ -64,13 +76,31 @@ def countLine(partID, records):
 
             if ((p_match and d_match) and (p_match != d_match)):
                 dirct_lines = tuple(p_lines.intersection(d_lines))
+                dirct_lines_wd_h_d_m = (dirct_lines, wd, hour, day, month)
                 if dirct_lines:
-                    entr_lines[dirct_lines] = entr_lines.get(dirct_lines, 0)+1
+                    entr_lines[dirct_lines_wd_h_d_m] = entr_lines.get(dirct_lines_wd_h_d_m, 0)+1
     return entr_lines.items()
 
 def mapper(record):
-    for key in record[0]:
-        yield key, record[1]
+    for key in record[0][0]:
+        yield (key, record[0][1], record[0][2], record[0][3], record[0][4]), record[1]
+
+
+def service(record):
+	if (record[0][0] == 'B' and (record[0][1] in [5, 6])):
+		pass
+	elif (record[0][0] == 'W' and (record[0][1] in [5, 6])):
+		pass
+	elif (record[0][0] == 'C' and (record[0][2] in range(0,6))):
+		pass
+	elif (record[0][0] == 'B' and (record[0][1] in range(0,6))):
+		pass
+	elif (record[0][0] == 'S' and (record[0][1] in range(0,6))):
+		pass
+	elif (record[0][0] == 'W' and (record[0][1] in range(0,6))):
+		pass
+	else:
+		return record
 
 def fetch_entr_geo(entr_points):
     import geopandas as gpd
@@ -100,6 +130,6 @@ if __name__ == '__main__':
     #sc = SparkContext(appName="bigdata")
     
     rdd = sc.textFile(taxi_csv_path)
-    counts = rdd.mapPartitionsWithIndex(countLine).flatMap(mapper).reduceByKey(lambda x,y: x+y)
+    counts = rdd.mapPartitionsWithIndex(countLine).flatMap(mapper).reduceByKey(lambda x,y: x+y).filter(service)
     #print counts.collect()[0]
     counts.saveAsTextFile('hdfs://babar.es.its.nyu.edu:8020/user/df1676/out')
