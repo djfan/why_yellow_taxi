@@ -13,6 +13,7 @@ import pyspark
 from pyspark import SparkContext
 from shapely.geometry import Point
 from pyspark.sql import SQLContext
+import datetime
 
 def countLine(partID, records):
     import pyproj
@@ -29,7 +30,7 @@ def countLine(partID, records):
     import pyspark
     from pyspark import SparkContext
     from pyspark.sql import SQLContext
-
+    import datetime
     index = rtree.Rtree()
     for idx, geometry in enumerate(entr_buf.geometry):
         index.insert(idx, geometry.bounds)
@@ -43,17 +44,17 @@ def countLine(partID, records):
 
     for row in reader:
         if ((float(row[5])!=0) and float(row[9]!=0)):
-        	if row[1]:
-        		wd_h = datetime.datetime.strptime(row[1], '%Y-%m-%d %H:%M:%S')
-        		wd = wd_h.weekday()
-        		hour = wd_h.hour
-        		day = wd_h.day
-        		month = wd_h.month
-        	else:
-        		wd = None
-        		hour = None
-        		day = None
-        		month = None
+            if row[1]:
+        	wd_h = datetime.datetime.strptime(row[1], '%Y-%m-%d %H:%M:%S')
+        	wd = wd_h.weekday()
+        	hour = wd_h.hour
+        	day = wd_h.day
+        	month = wd_h.month
+            else:
+        	wd = None
+        	hour = None
+        	day = None
+        	month = None
 
             p = geom.Point(proj(float(row[5]), float(row[6])))
             d = geom.Point(proj(float(row[9]), float(row[10])))
