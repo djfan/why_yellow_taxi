@@ -30,20 +30,35 @@ Sometimes people could take subway from A to B (directly, no transfer), but they
 ├── LICENSE
 ├── Output
 │   ├── README.md
-│   ├── apr
-│   ├── aug
-│   ├── dec
+│   ├── csv
+│   │   ├── apr.csv
+│   │   ├── aug.csv
+│   │   ├── dec.csv
+│   │   ├── feb.csv
+│   │   ├── jan.csv
+│   │   ├── jul.csv
+│   │   ├── jun.csv
+│   │   ├── mar.csv
+│   │   ├── may.csv
+│   │   ├── nov.csv
+│   │   ├── oct.csv
+│   │   └── sep.csv
 │   ├── dumbo_run_ys.py
-│   ├── feb
-│   ├── jan
-│   ├── jul
-│   ├── jun
-│   ├── mar
-│   ├── may
-│   ├── nov
-│   ├── oct
-│   ├── sep
-│   └── taxirun.sh
+│   ├── raw
+│   │   ├── apr
+│   │   ├── aug
+│   │   ├── dec
+│   │   ├── feb
+│   │   ├── jan
+│   │   ├── jul
+│   │   ├── jun
+│   │   ├── mar
+│   │   ├── may
+│   │   ├── nov
+│   │   ├── oct
+│   │   └── sep
+│   ├── taxirun.sh
+│   └── transform.ipynb
 ├── README.md
 ├── Run
 │   ├── Dumbo_Run.ipynb
@@ -60,6 +75,12 @@ Sometimes people could take subway from A to B (directly, no transfer), but they
 │   ├── Sjoin_Pyspark_4_byWDandHour.ipynb
 │   └── sjoin.py
 ├── Use\ IPython\ notebook\ interactively\ on\ a\ HPC\ system
+├── Viz
+│   ├── 1_buffer.png
+│   ├── 2_pick_up.png
+│   ├── 3_drop_off.png
+│   ├── 4_taxi_route.png
+│   └── services.png
 └── docs
     
 ```
