@@ -27,24 +27,15 @@ Sometimes people could take subway from A to B (directly, no transfer), but they
 ├── Filter
 │   ├── README.md
 │   └── Sjoin_Pyspark_5_ServiceTime.ipynb
+├── Interactive_Time_Series_Plot
+│   ├── Interactive\ Time\ Series\ Plot\ -\ by\ hour,\ Jan\ 2016.ipynb
+│   ├── README.md
+│   └── jan_hour.csv
 ├── LICENSE
 ├── Output
-│   ├── README.md
-│   ├── csv
-│   │   ├── apr.csv
-│   │   ├── aug.csv
-│   │   ├── dec.csv
-│   │   ├── feb.csv
-│   │   ├── jan.csv
-│   │   ├── jul.csv
-│   │   ├── jun.csv
-│   │   ├── mar.csv
-│   │   ├── may.csv
-│   │   ├── nov.csv
-│   │   ├── oct.csv
-│   │   └── sep.csv
-│   ├── dumbo_run_ys.py
-│   ├── raw
+│   ├── 1_dumbo_run_ys.py
+│   ├── 2_taxirun.sh
+│   ├── 3_raw
 │   │   ├── apr
 │   │   ├── aug
 │   │   ├── dec
@@ -57,8 +48,36 @@ Sometimes people could take subway from A to B (directly, no transfer), but they
 │   │   ├── nov
 │   │   ├── oct
 │   │   └── sep
-│   ├── taxirun.sh
-│   └── transform.ipynb
+│   ├── 4_clean_raw_data.ipynb
+│   ├── 5_csv
+│   │   ├── apr.csv
+│   │   ├── aug.csv
+│   │   ├── dec.csv
+│   │   ├── feb.csv
+│   │   ├── jan.csv
+│   │   ├── jul.csv
+│   │   ├── jun.csv
+│   │   ├── mar.csv
+│   │   ├── may.csv
+│   │   ├── nov.csv
+│   │   ├── oct.csv
+│   │   └── sep.csv
+│   ├── 6_Analysis\ of\ yellow\ cab\ trips\ along\ subway\ line.ipynb
+│   ├── 7_plots
+│   │   ├── LINE\ 3\ &2.png
+│   │   ├── LINE\ J\ &\ Z.png
+│   │   ├── anomaly\ C.png
+│   │   ├── anomaly\ July\ 2015.png
+│   │   ├── anomaly\ June\ 2015.png
+│   │   ├── anomaly\ c\ zoom\ in.png
+│   │   ├── boxplot\ outliers.png
+│   │   ├── histogram\ line\ C\ &\ 1\ .png
+│   │   ├── histogram\ of\ all\ trips.png
+│   │   ├── june\ 18\ 19,\ 2015.png
+│   │   ├── outliers\ time\ series.png
+│   │   ├── time\ series\ all\ year.png
+│   │   └── time\ series\ jan\ 23\ detail.png
+│   └── README.md
 ├── README.md
 ├── Run
 │   ├── Dumbo_Run.ipynb
