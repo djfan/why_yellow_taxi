@@ -1,6 +1,24 @@
 # **Why Yellow Taxi, Not Subway**
 
+#### Question:
+
 Sometimes people could take subway from A to B (directly, no transfer), but they take a yellow cab instead. We are wondering which subway line is the one that people are most unwilling to take, by detecting people’s choice pattern based on location, time and day of the week, we would like to answer the question why people would choose yellow cab instead of subway.
+
+#### Repository
+
+| #    | Folder      | Note                                     |
+| ---- | ----------- | ---------------------------------------- |
+| 1    | Data        | All Data                                 |
+| 2    | Buffer      | Create Buffer Area of Subway Entrances (Run in Local) |
+| 3    | Sjoin       | Spatial Join (Run in Local)              |
+| 4    | Filter      | Filter Service Time (Run in Local)       |
+| 5    | Run         | Testing Scripts (Run in Dumbo)           |
+| 6    | Output      | **Final-Version** Scripts and Results (Run in Dumbo) |
+| 7    | Viz         | Plots                                    |
+| 8    | Deliverable | Slide, Docs                              |
+| 9    | docs        | Website ( *to be continued ...* )        |
+
+#### Structure:
 
 ```
 .
