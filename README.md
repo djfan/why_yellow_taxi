@@ -1,5 +1,15 @@
 # **Why Yellow Taxi, Not Subway**
 
+#### Team:
+
+Sichen Tang  st1671@nyu.edu
+
+Yuan Shi  ys2808@nyu.edu
+
+Chunqing Xu  cx495@nyu.edu
+
+Dongjie Fan  df1676@nyu.edu
+
 #### Question:
 
 Sometimes people could take subway from A to B (directly, no transfer), but they take a yellow cab instead. We are wondering which subway line is the one that people are most unwilling to take, by detecting people’s choice pattern based on location, time and day of the week, we would like to answer the question why people would choose yellow cab instead of subway.
